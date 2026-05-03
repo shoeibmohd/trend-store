@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #f2d98a;
+  --dark: #0a0a0a;
+  --dark-secondary: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gold-400 hover:bg-gold-500 text-dark-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm tracking-wide uppercase;
+  }
+
+  .btn-dark {
+    @apply bg-dark-950 hover:bg-dark-900 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm tracking-wide uppercase;
+  }
+
+  .btn-outline {
+    @apply border-2 border-dark-950 text-dark-950 hover:bg-dark-950 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm tracking-wide uppercase;
+  }
+
+  .btn-ghost {
+    @apply text-dark-600 hover:text-dark-950 hover:bg-dark-50 font-medium px-4 py-2 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-200 text-sm;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-dark-800 mb-1.5;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-dark-950 tracking-tight;
+  }
+
+  .gold-text {
+    @apply text-gold-400;
+  }
+
+  .gold-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gold-400;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8922e;
+}
+
+/* Gold shimmer animation */
+.shimmer-gold {
+  background: linear-gradient(90deg, #C9A84C 25%, #f2d98a 50%, #C9A84C 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Product card hover effect */
+.product-card-image {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card-image {
+  transform: scale(1.05);
+}
+
+/* Status badge */
+.status-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border;
+}
+
+/* Admin sidebar */
+.admin-nav-link {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200;
+}
+
+.admin-nav-link.active {
+  @apply bg-gold-400 text-dark-950;
+}
+
+.admin-nav-link:not(.active) {
+  @apply text-gray-400 hover:text-white hover:bg-white/10;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Image placeholder */
+.img-placeholder {
+  @apply flex items-center justify-center bg-gray-100 text-gray-400;
+}
