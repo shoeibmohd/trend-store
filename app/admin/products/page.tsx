@@ -4,6 +4,8 @@ import { redirect } from 'next/navigation'
 import AdminLayout from '@/components/admin/AdminLayout'
 import AdminProductsClient from '@/components/admin/AdminProductsClient'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminProductsPage() {
   const admin = await getAdminFromCookies()
   if (!admin) redirect('/admin/login')

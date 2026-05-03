@@ -5,6 +5,8 @@ import AdminLayout from '@/components/admin/AdminLayout'
 import Link from 'next/link'
 import { formatPrice, formatDate, STATUS_COLORS, type OrderStatus } from '@/lib/utils'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboard() {
   const admin = await getAdminFromCookies()
   if (!admin) redirect('/admin/login')

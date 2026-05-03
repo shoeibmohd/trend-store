@@ -4,6 +4,8 @@ import ProductCard from '@/components/store/ProductCard'
 import HeroSection from '@/components/store/HeroSection'
 import CategoryFilter from '@/components/store/CategoryFilter'
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   searchParams: { category?: string }
 }

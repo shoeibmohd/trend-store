@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import StoreLayout from '@/components/store/StoreLayout'
 import ProductDetailClient from '@/components/store/ProductDetailClient'
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: { id: string }
 }
