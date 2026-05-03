@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-export const dynamic = 'force-dynamic'
-
 import { prisma } from '@/lib/prisma'
 import { getAdminFromRequest } from '@/lib/auth'
 import { sendOrderNotification } from '@/lib/email'
+
+export const dynamic = 'force-dynamic'
 
 export async function GET(req: NextRequest) {
   try {

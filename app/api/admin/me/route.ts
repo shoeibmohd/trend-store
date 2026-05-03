@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { getAdminFromRequest } from '@/lib/auth'
 
 export const dynamic = 'force-dynamic'
-
-import { getAdminFromRequest } from '@/lib/auth'
 
 export async function GET(req: NextRequest) {
   const admin = await getAdminFromRequest(req)
