@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+
+export const dynamic = 'force-dynamic'
+
 import { getAdminFromRequest } from '@/lib/auth'
 import { writeFile, mkdir } from 'fs/promises'
 import path from 'path'
